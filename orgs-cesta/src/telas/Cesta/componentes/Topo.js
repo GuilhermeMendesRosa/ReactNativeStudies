@@ -4,11 +4,13 @@ import Texto from '../../../componentes/Texto';
 
 import topo from '../../../../assets/topo.png'
 
-export default function Topo() {
-    return (<>
-        <Image style={estilos.topo} source={topo} />
-        <Texto style={estilos.titulo}>Detalhe da Sexta</Texto>
-    </>)
+export default function Topo({ titulo }) {
+    return (
+        <>
+            <Image style={estilos.topo} source={topo} />
+            <Texto style={estilos.titulo}>{titulo}</Texto>
+        </>
+    )
 }
 
 const width = Dimensions.get('screen').width;
