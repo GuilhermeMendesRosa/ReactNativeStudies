@@ -1,26 +1,28 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 
+import Texto from '../componentes/Texto';
+
 import logo from '../../assets/logo.png';
 import topo from '../../assets/topo.png';
 
 export default function Cesta() {
     return (
         <>
-            <Image source={topo} style={estilos.topo} />
-            <Text style={estilos.titulo}>Detalhe da Sexta</Text>
+            <Image style={estilos.topo} source={topo} />
+            <Texto style={estilos.titulo}>Detalhe da Sexta</Texto>
 
             <View style={estilos.cesta}>
+                <Texto style={estilos.nome}>Cesta de Verduras</Texto>
                 <View style={estilos.viewTitulo} >
                     <Image style={estilos.logo} source={logo} />
-                    <Text style={estilos.nome}>Cesta de Verduras</Text>
+                    <Texto style={estilos.nomeFazenda} >Jenny Jack Farm</Texto>
                 </View>
-                <Text style={estilos.nomeFazenda} >Jenny Jack Farm</Text>
-                <Text style={estilos.descricao}>Uma sexta com produtos selecionados
+                <Texto style={estilos.descricao}>Uma sexta com produtos selecionados
                     cuidadosamente da fazenda direto
                     para a cozinha
-                </Text>
-                <Text style={estilos.preco}>R$ 40,00</Text>
+                </Texto>
+                <Texto style={estilos.preco}>R$ 40,00</Texto>
             </View>
         </>)
 }
@@ -40,14 +42,13 @@ const estilos = StyleSheet.create({
         fontSize: 16,
         lineHeight: 16,
         color: 'white',
-        fontWeight: 'bold',
-        padding: 16
+        padding: 16,
+        fontWeight: 'bold'
     },
     viewTitulo: {
-        display: 'flex',
         flexDirection: 'row',
-        gap: 10,
-        alignItems: 'center'
+        alignItems: 'center',
+        gap: 10
     },
     logo: {
         height: 30,
@@ -65,7 +66,7 @@ const estilos = StyleSheet.create({
     },
     nomeFazenda: {
         fontSize: 16,
-        lineHeight: 26
+        lineHeight: 26,
     },
     descricao: {
         color: "#a3a3a3",
